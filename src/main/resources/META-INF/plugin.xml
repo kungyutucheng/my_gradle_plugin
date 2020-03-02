@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.your.company.my_gradle_plugin</id>
+    <name>Plugin display name here</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+
+    <actions>
+        <action id="com.kungyu.action.PopupDialogAction" class="com.kungyu.action.PopupDialogAction"
+                text="pop dialog action" description="action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- secondary:true表示设置在tool window bar最下方 -->
+        <toolWindow id="customer tool window" anchor="right" factoryClass="com.kungyu.toolwindow.MyToolWindowFactory" secondary="true"
+        conditionClass="com.kungyu.toolwindow.MyToolWindowFactory"/>
+    </extensions>
+</idea-plugin>
