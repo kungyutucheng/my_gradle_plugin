@@ -32,4 +32,10 @@
         <toolWindow id="customer tool window" anchor="right" factoryClass="com.kungyu.toolwindow.MyToolWindowFactory" secondary="true"
         conditionClass="com.kungyu.toolwindow.MyToolWindowFactory"/>
     </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- secondary:true表示设置在tool window bar最下方 -->
+        <toolWindow id="customer tool window" anchor="right" factoryClass="com.kungyu.dialog.MyToolWindowFactory" secondary="true"
+                    conditionClass="com.kungyu.dialog.MyToolWindowFactory"/>
+    </extensions>
 </idea-plugin>
