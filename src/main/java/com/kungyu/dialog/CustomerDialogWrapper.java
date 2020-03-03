@@ -1,6 +1,7 @@
 package com.kungyu.dialog;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.ValidationInfo;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
@@ -8,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author wengyongcheng
@@ -15,7 +17,10 @@ import java.awt.*;
  */
 public class CustomerDialogWrapper extends DialogWrapper {
 
-    private JTextField inputTextField = new JTextField();
+    private JTextField inputTextField;
+
+    private CustomOKAction okAction;
+    private DialogWrapperExitAction exitAction;
 
     public CustomerDialogWrapper() {
         super(true);
@@ -36,6 +41,7 @@ public class CustomerDialogWrapper extends DialogWrapper {
         JLabel label = new JLabel("这就是自定义dialog");
         label.setPreferredSize(new Dimension(100,100));
         panel.add(label,BorderLayout.CENTER);
+        inputTextField = new JTextField();
         panel.add(inputTextField, BorderLayout.NORTH);
         return panel;
 
@@ -49,12 +55,10 @@ public class CustomerDialogWrapper extends DialogWrapper {
     @Override
     protected ValidationInfo doValidate() {
         String text = inputTextField.getText();
-        System.out.println(text);
         if(StringUtils.isNotBlank(text)) {
             return null;
         } else {
-            ValidationInfo validationInfo = new ValidationInfo("校验不通过");
-            return validationInfo;
+            return new ValidationInfo("校验不通过");
         }
     }
 
@@ -65,10 +69,31 @@ public class CustomerDialogWrapper extends DialogWrapper {
     @NotNull
     @Override
     protected Action[] createActions() {
-        DialogWrapperExitAction exitAction = new DialogWrapperExitAction("自定义cancel按钮", 1);
-        CustomerOkAction customerOkAction = new CustomerOkAction();
+        exitAction = new DialogWrapperExitAction("自定义cancel按钮", CANCEL_EXIT_CODE);
+        okAction = new CustomOKAction();
         // 设置默认的焦点按钮
-        customerOkAction.putValue(DialogWrapper.DEFAULT_ACTION, true);
-        return new Action[]{customerOkAction,exitAction};
+        okAction.putValue(DialogWrapper.DEFAULT_ACTION, true);
+        return new Action[]{okAction,exitAction};
+    }
+
+    /**
+     * 自定义 ok Action
+     */
+    protected class CustomOKAction extends DialogWrapperAction {
+
+        protected CustomOKAction() {
+            super("自定义ok按钮");
+        }
+
+        @Override
+        protected void doAction(ActionEvent e) {
+            // 点击ok的时候进行数据校验
+            ValidationInfo validationInfo = doValidate();
+            if (validationInfo != null) {
+                Messages.showMessageDialog(validationInfo.message,"校验不通过", Messages.getInformationIcon());
+            } else {
+                close(CANCEL_EXIT_CODE);
+            }
+        }
     }
 }
