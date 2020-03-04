@@ -15,14 +15,14 @@ import java.awt.event.ActionEvent;
  * @author wengyongcheng
  * @since 2020/3/2 10:36 下午
  */
-public class CustomerDialogWrapper extends DialogWrapper {
+public class CustomDialogWrapper extends DialogWrapper {
 
     private JTextField inputTextField;
 
     private CustomOKAction okAction;
     private DialogWrapperExitAction exitAction;
 
-    public CustomerDialogWrapper() {
+    public CustomDialogWrapper() {
         super(true);
         init();
         setTitle("自定义dialog");

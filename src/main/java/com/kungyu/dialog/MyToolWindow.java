@@ -3,8 +3,6 @@ package com.kungyu.dialog;
 import com.intellij.openapi.wm.ToolWindow;
 
 import javax.swing.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * @author wengyongcheng
@@ -28,7 +26,7 @@ public class MyToolWindow  {
     private void init() {
         dialogButton = new JButton("触发自定义dialog");
         dialogButton.addActionListener(e -> {
-            if (new CustomerDialogWrapper().showAndGet()) {
+            if (new CustomDialogWrapper().showAndGet()) {
                 // 监听弹框消失，相当于show 和 getExitCode方法的结合
                 System.out.println("show and get");
             }

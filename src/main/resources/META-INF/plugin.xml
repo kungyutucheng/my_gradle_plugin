@@ -19,23 +19,88 @@
     </extensions>
 
 
+
     <actions>
+        <!--   package:action     -->
         <action id="com.kungyu.action.PopupDialogAction" class="com.kungyu.action.PopupDialogAction"
-                text="pop dialog action" description="action example">
+                text="PopupDialogAction" description="PopupDialogAction">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
+        <!--   package:action     -->
+
+        <!--    ActionGroupPopupAction    -->
+        <!--<action id="com.kungyu.popup.ActionGroupPopupAction" class="com.kungyu.popup.ActionGroupPopupAction"
+                text="ActionGroupPopupAction" description="ActionGroupPopupAction">
+            <add-to-group group-id="PopupMenuActions" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
+        </action>
+        <group id="popupGroup"/>
+        <action class="com.kungyu.popup.CustomFirstAction" id="com.kungyu.popup.CustomFirstAction"
+                text="CustomFirstAction" description="CustomFirstAction">
+            <add-to-group group-id="popupGroup" anchor="first"/>
+        </action>
+
+        <action class="com.kungyu.popup.CustomSecondAction" id="com.kungyu.popup.CustomSecondAction"
+                text="CustomSecondAction" description="CustomSecondAction">
+            <add-to-group group-id="popupGroup" anchor="after" relative-to-action="CustomFirstAction"/>
+        </action>-->
+        <!--    ActionGroupPopupAction    -->
+
+
+        <!--    ComponentPopupAction    -->
+        <!--<action id="com.kungyu.popup.ComponentPopupAction" class="com.kungyu.popup.ComponentPopupAction"
+                text="ComponentPopupAction" description="ComponentPopupAction">
+            <add-to-group group-id="PopupMenuActions" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
+        </action>-->
+        <!--    ComponentPopupAction    -->
+
+        <!--    ConfirmPopupAction    -->
+        <!--<action id="com.kungyu.popup.ConfirmPopupAction" class="com.kungyu.popup.ConfirmPopupAction"
+                text="ConfirmPopupAction" description="ConfirmPopupAction">
+            <add-to-group group-id="PopupMenuActions" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
+        </action>-->
+        <!--    ConfirmPopupAction    -->
+
+        <!--    ConfirmPopupAction    -->
+        <!--<action id="com.kungyu.popup.MultiChoosePopupAction" class="com.kungyu.popup.MultiChoosePopupAction"
+                text="MultiChoosePopupAction" description="MultiChoosePopupAction">
+            <add-to-group group-id="PopupMenuActions" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
+        </action>-->
+        <!--    ConfirmPopupAction    -->
+
+        <!--    SubGroupPopupAction    -->
+        <action id="com.kungyu.popup.SubGroupPopupAction" class="com.kungyu.popup.SubGroupPopupAction"
+                text="SubGroupPopupAction" description="SubGroupPopupAction">
+            <add-to-group group-id="PopupMenuActions" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
+        </action>
+        <group id="subOuterGroup"/>
+        <!--    popup为true代表这是一个子菜单    -->
+        <group id="subInnerGroup" popup="true" text="SubInnerGroup">
+            <add-to-group group-id="subOuterGroup" anchor="first"/>
+            <action class="com.kungyu.popup.SubAction" id="subAction"
+                    text="SubAction" description="SubAction">
+            </action>
+        </group>
+        <!--    SubGroupPopupAction    -->
     </actions>
 
-
+    <!--  package:toolwindow  -->
     <extensions defaultExtensionNs="com.intellij">
         <!-- secondary:true表示设置在tool window bar最下方 -->
         <toolWindow id="customer tool window" anchor="right" factoryClass="com.kungyu.toolwindow.MyToolWindowFactory" secondary="true"
         conditionClass="com.kungyu.toolwindow.MyToolWindowFactory"/>
     </extensions>
+    <!--  package:toolwindow  -->
 
+    <!--  package:dialog-->
     <extensions defaultExtensionNs="com.intellij">
         <!-- secondary:true表示设置在tool window bar最下方 -->
         <toolWindow id="customer tool window" anchor="right" factoryClass="com.kungyu.dialog.MyToolWindowFactory" secondary="true"
                     conditionClass="com.kungyu.dialog.MyToolWindowFactory"/>
     </extensions>
+    <!--  package:dialog-->
 </idea-plugin>
