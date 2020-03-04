@@ -28,6 +28,7 @@
         </action>
         <!--   package:action     -->
 
+        <!--   package:popup     -->
         <!--    ActionGroupPopupAction    -->
         <!--<action id="com.kungyu.popup.ActionGroupPopupAction" class="com.kungyu.popup.ActionGroupPopupAction"
                 text="ActionGroupPopupAction" description="ActionGroupPopupAction">
@@ -86,6 +87,9 @@
             </action>
         </group>
         <!--    SubGroupPopupAction    -->
+        <!--   package:popup     -->
+
+
     </actions>
 
     <!--  package:toolwindow  -->
