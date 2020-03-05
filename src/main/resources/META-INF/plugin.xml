@@ -22,10 +22,10 @@
 
     <actions>
         <!--   package:action     -->
-        <action id="com.kungyu.action.PopupDialogAction" class="com.kungyu.action.PopupDialogAction"
+        <!--<action id="com.kungyu.action.PopupDialogAction" class="com.kungyu.action.PopupDialogAction"
                 text="PopupDialogAction" description="PopupDialogAction">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
+        </action>-->
         <!--   package:action     -->
 
         <!--   package:popup     -->
@@ -73,21 +73,28 @@
         <!--    ConfirmPopupAction    -->
 
         <!--    SubGroupPopupAction    -->
-        <action id="com.kungyu.popup.SubGroupPopupAction" class="com.kungyu.popup.SubGroupPopupAction"
+        <!--<action id="com.kungyu.popup.SubGroupPopupAction" class="com.kungyu.popup.SubGroupPopupAction"
                 text="SubGroupPopupAction" description="SubGroupPopupAction">
             <add-to-group group-id="PopupMenuActions" anchor="first"/>
             <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
         </action>
         <group id="subOuterGroup"/>
-        <!--    popup为true代表这是一个子菜单    -->
+        &lt;!&ndash;    popup为true代表这是一个子菜单    &ndash;&gt;
         <group id="subInnerGroup" popup="true" text="SubInnerGroup">
             <add-to-group group-id="subOuterGroup" anchor="first"/>
             <action class="com.kungyu.popup.SubAction" id="subAction"
                     text="SubAction" description="SubAction">
             </action>
-        </group>
+        </group>-->
         <!--    SubGroupPopupAction    -->
         <!--   package:popup     -->
+
+        <!--   package:notification   -->
+        <action id="com.kungyu.notification.HintNotificationAction" class="com.kungyu.notification.HintNotificationAction"
+                text="HintNotificationAction" description="HintNotificationAction">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        <!--   package:notification   -->
 
 
     </actions>
