@@ -103,6 +103,13 @@
         </action>
         <!--   package:file.chooser   -->
 
+        <!--   package:list.tree     -->
+        <action id="com.kungyu.list.tree.ListAction" class="com.kungyu.list.tree.ListAction"
+                text="ListAction" description="ListAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.file.chooser.FileChooserAction"/>
+        </action>
+        <!--   package:list.tree     -->
+
 
     </actions>
 
