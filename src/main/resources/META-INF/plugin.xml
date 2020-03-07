@@ -96,6 +96,13 @@
         </action>
         <!--   package:notification   -->
 
+        <!--   package:file.chooser   -->
+        <action id="com.kungyu.file.chooser.FileChooserAction" class="com.kungyu.file.chooser.FileChooserAction"
+                text="FileChooserAction" description="FileChooserAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.notification.HintNotificationAction"/>
+        </action>
+        <!--   package:file.chooser   -->
+
 
     </actions>
 
