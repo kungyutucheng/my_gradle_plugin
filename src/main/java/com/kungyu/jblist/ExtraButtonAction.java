@@ -1,6 +1,5 @@
-package com.kungyu.list.tree;
+package com.kungyu.jblist;
 
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.IconLoader;

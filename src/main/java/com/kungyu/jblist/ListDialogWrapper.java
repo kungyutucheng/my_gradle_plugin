@@ -1,4 +1,4 @@
-package com.kungyu.list.tree;
+package com.kungyu.jblist;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
