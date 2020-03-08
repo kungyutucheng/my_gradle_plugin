@@ -117,6 +117,12 @@
         </action>
         <!--   package:tree     -->
 
+        <!--   package:jbsplitter     -->
+        <action id="com.kungyu.jbsplitter.JBSplitterAction" class="com.kungyu.jbsplitter.JBSplitterAction"
+                text="JBSplitterAction" description="JBSplitterAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.tree.TreeAction"/>
+        </action>
+        <!--   package:jbsplitter     -->
     </actions>
 
     <!--  package:toolwindow  -->
@@ -134,4 +140,5 @@
                     conditionClass="com.kungyu.dialog.MyToolWindowFactory"/>
     </extensions>
     <!--  package:dialog-->
+
 </idea-plugin>
