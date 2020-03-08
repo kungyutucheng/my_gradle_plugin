@@ -103,13 +103,19 @@
         </action>
         <!--   package:file.chooser   -->
 
-        <!--   package:list.tree     -->
+        <!--   package:jblist     -->
         <action id="com.kungyu.jblist.ListAction" class="com.kungyu.jblist.ListAction"
                 text="ListAction" description="ListAction">
             <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.file.chooser.FileChooserAction"/>
         </action>
-        <!--   package:list.tree     -->
+        <!--   package:jblist     -->
 
+        <!--   package:tree     -->
+        <action id="com.kungyu.tree.TreeAction" class="com.kungyu.tree.TreeAction"
+                text="TreeAction" description="TreeAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.jblist.ListAction"/>
+        </action>
+        <!--   package:tree     -->
 
     </actions>
 
