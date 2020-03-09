@@ -131,6 +131,13 @@
         </action>
         <!--   package:jbtab     -->
 
+        <!--   package:editor.component     -->
+        <action id="com.kungyu.editor.component.EditorIllustrationAction" class="com.kungyu.editor.component.EditorIllustrationAction"
+                text="Editor Replace Text" description="Replaces selected text with 'Replacement'.">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <!--   package:editor.component     -->
+
     </actions>
 
     <!--  package:toolwindow  -->
