@@ -123,6 +123,14 @@
             <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.tree.TreeAction"/>
         </action>
         <!--   package:jbsplitter     -->
+
+        <!--   package:jbtab     -->
+        <action id="com.kungyu.jbtab.JBTabAction" class="com.kungyu.jbtab.JBTabAction"
+                text="JBTabAction" description="JBTabAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.jbsplitter.JBSplitterAction"/>
+        </action>
+        <!--   package:jbtab     -->
+
     </actions>
 
     <!--  package:toolwindow  -->
