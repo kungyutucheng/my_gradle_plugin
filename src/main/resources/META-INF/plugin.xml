@@ -136,6 +136,10 @@
                 text="Editor Replace Text" description="Replaces selected text with 'Replacement'.">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+        <action id="com.kungyu.editor.component.EditorAreaIllustration" class="com.kungyu.editor.component.EditorAreaIllustration"
+                text="Caret Position" description="Caret Position">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="com.kungyu.editor.component.EditorIllustrationAction"/>
+        </action>
         <!--   package:editor.component     -->
 
     </actions>
