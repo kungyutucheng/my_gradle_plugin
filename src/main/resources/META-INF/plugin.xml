@@ -140,6 +140,10 @@
                 text="Caret Position" description="Caret Position">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="com.kungyu.editor.component.EditorIllustrationAction"/>
         </action>
+        <action id="com.kungyu.editor.component.EditorHandlerIllustration" class="com.kungyu.editor.component.EditorHandlerIllustration"
+                text="EditorHandlerIllustration" description="EditorHandlerIllustration">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="com.kungyu.editor.component.EditorAreaIllustration"/>
+        </action>
         <!--   package:editor.component     -->
 
     </actions>
