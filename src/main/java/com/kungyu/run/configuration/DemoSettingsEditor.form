@@ -22,6 +22,7 @@
         </constraints>
         <properties>
           <name value=""/>
+          <requestFocusEnabled value="true"/>
           <text value="Script File"/>
         </properties>
         <border type="none"/>

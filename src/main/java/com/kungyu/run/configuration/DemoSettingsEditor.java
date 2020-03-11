@@ -17,7 +17,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
     private LabeledComponent<TextFieldWithBrowseButton> scriptName;
 
     private void createUIComponents() {
-        scriptName = new LabeledComponent();
+        scriptName = new LabeledComponent<>();
         scriptName.setComponent(new TextFieldWithBrowseButton());
     }
 
