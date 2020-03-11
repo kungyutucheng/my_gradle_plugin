@@ -170,4 +170,10 @@
     </extensions>
     <!--  package:run.configuration  -->
 
+    <!--  package:run.configuration  -->
+    <extensions defaultExtensionNs="com.intellij">
+        <configurationType implementation="com.kungyu.run.configuration.multi.factory.MultiFactoryConfigurationType"/>
+    </extensions>
+    <!--  package:run.configuration  -->
+
 </idea-plugin>
