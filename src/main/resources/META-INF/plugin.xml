@@ -163,5 +163,11 @@
                     conditionClass="com.kungyu.dialog.MyToolWindowFactory"/>
     </extensions>
     <!--  package:dialog-->
+    
+    <!--  package:run.configuration  -->
+    <extensions defaultExtensionNs="com.intellij">
+        <configurationType implementation="com.kungyu.run.configuration.DemoConfigurationType"/>
+    </extensions>
+    <!--  package:run.configuration  -->
 
 </idea-plugin>
