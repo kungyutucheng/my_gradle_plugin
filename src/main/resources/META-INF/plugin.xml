@@ -170,10 +170,24 @@
     </extensions>
     <!--  package:run.configuration  -->
 
-    <!--  package:run.configuration  -->
+    <!--  package:run.configuration.multi.factory  -->
     <extensions defaultExtensionNs="com.intellij">
         <configurationType implementation="com.kungyu.run.configuration.multi.factory.MultiFactoryConfigurationType"/>
     </extensions>
-    <!--  package:run.configuration  -->
+    <!--  package:run.configuration.multi.factory -->
+
+    <!--  package:run.configuration.persistent  -->
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <configurationType implementation="com.kungyu.run.configuration.persisent.PersistentConfigurationType"/>-->
+<!--    </extensions>-->
+
+    <!--  package:run.configuration.persistent  -->
+
+    <!--  package:setting  -->
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.kungyu.setting.Settings"/>
+        <applicationConfigurable instance="com.kungyu.setting.MainSetting" dynamic="true"/>
+    </extensions>
+    <!--  package:setting  -->
 
 </idea-plugin>
