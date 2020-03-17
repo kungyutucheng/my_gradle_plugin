@@ -190,4 +190,12 @@
     </extensions>
     <!--  package:setting  -->
 
+
+    <!--   package:persisting.state.component-->
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable instance="com.kungyu.persisting.state.component.PropertiesComponentApplicationSetting" dynamic="true"/>
+        <projectConfigurable instance="com.kungyu.persisting.state.component.PropertiesComponentProjectSetting" dynamic="true"/>
+    </extensions>
+
+    <!--   package:persisting.state.component-->
 </idea-plugin>
