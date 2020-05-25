@@ -2,6 +2,8 @@ package com.kungyu.popup;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.ui.popup.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,12 +24,13 @@ public class ComponentPopupAction extends AnAction implements ListSelectionListe
         // 自定义popup样式
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
-        JTextField textField = new JTextField();
+        JTextField textField = new JTextField("fdas");
         panel.add(textField, BorderLayout.NORTH);
         JButton button = new JButton("提交");
         panel.add(button, BorderLayout.CENTER);
         ComponentPopupBuilder componentPopupBuilder = JBPopupFactory.getInstance().createComponentPopupBuilder(panel, textField);
         JBPopup popup = componentPopupBuilder.createPopup();
+        popup.setRequestFocus(true);
         popup.showInBestPositionFor(e.getDataContext());
     }
 
