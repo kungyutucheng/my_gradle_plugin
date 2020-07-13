@@ -49,11 +49,11 @@
 
 
         <!--    ComponentPopupAction    -->
-        <!--<action id="com.kungyu.popup.ComponentPopupAction" class="com.kungyu.popup.ComponentPopupAction"
+        <action id="com.kungyu.popup.ComponentPopupAction" class="com.kungyu.popup.ComponentPopupAction"
                 text="ComponentPopupAction" description="ComponentPopupAction">
             <add-to-group group-id="PopupMenuActions" anchor="first"/>
             <keyboard-shortcut first-keystroke="control alt 1" keymap="Mac OS X 10.5+"/>
-        </action>-->
+        </action>
         <!--    ComponentPopupAction    -->
 
         <!--    ConfirmPopupAction    -->
@@ -146,6 +146,35 @@
         </action>
         <!--   package:editor.component     -->
 
+        <!--   package:project  -->
+        <action id="com.kungyu.project.GetContentSourceRootAction" class="com.kungyu.project.GetContentSourceRootAction"
+                text="GetContentSourceRootAction" description="GetContentSourceRootAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.jbtab.JBTabAction"/>
+        </action>
+
+        <action id="com.kungyu.project.ProjectFileIndexAction" class="com.kungyu.project.ProjectFileIndexAction"
+                text="ProjectFileIndexAction" description="ProjectFileIndexAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.project.GetContentSourceRootAction"/>
+        </action>
+
+        <action id="com.kungyu.project.ProjectSdkAction" class="com.kungyu.project.ProjectSdkAction"
+                text="ProjectSdkAction" description="ProjectSdkAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.project.ProjectFileIndexAction"/>
+        </action>
+
+        <action id="com.kungyu.project.ProjectStructureAction" class="com.kungyu.project.ProjectStructureAction"
+                text="ProjectStructureAction" description="ProjectStructureAction">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="com.kungyu.project.ProjectSdkAction"/>
+        </action>
+
+        <!--   package:project  -->
+
+        <!--   package:toolview-->
+        <action id="com.kungyu.toolview.ConsoleViewAction" class="com.kungyu.toolview.ConsoleViewAction"
+                text="ConsoleViewAction" description="ConsoleViewAction">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <!--   package:toolview-->
     </actions>
 
     <!--  package:toolwindow  -->
@@ -198,4 +227,13 @@
     </extensions>
 
     <!--   package:persisting.state.component-->
+
+    <!--   package:toolview-->
+    <extensions defaultExtensionNs="com.intellij">
+        <executor implementation="com.kungyu.toolview.CustomRunExecutor" id="CustomRunExecutor"/>
+    </extensions>
+    <!--   package:toolview-->
+
+
+
 </idea-plugin>
