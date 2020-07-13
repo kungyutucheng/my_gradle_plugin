@@ -2,6 +2,7 @@ package com.kungyu.toolview;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -11,7 +12,18 @@ import org.jetbrains.annotations.NotNull;
 public class ConsoleViewAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        CustomExecutor executor = new CustomExecutor(e.getProject());
+        runExecutor(e.getProject());
+
+    }
+
+    public void runExecutor(Project project) {
+        if (project == null) {
+            return;
+        }
+        CustomExecutor executor = new CustomExecutor(project);
+        // 设置restart和stop
+        executor.withReturn(() -> runExecutor(project)).withStop(() -> ConfigUtil.setRunning(project,false), () ->
+            ConfigUtil.getRunning(project));
         executor.run();
     }
 }

@@ -41,6 +41,17 @@ public class CustomExecutor implements Disposable {
 
     private Computable<Boolean> stopEnabled;
 
+    public CustomExecutor withReturn(Runnable returnAction) {
+        this.rerunAction = returnAction;
+        return this;
+    }
+
+    public CustomExecutor withStop(Runnable stopAction, Computable<Boolean> stopEnabled) {
+        this.stopAction = stopAction;
+        this.stopEnabled = stopEnabled;
+        return this;
+    }
+
     public CustomExecutor(@NotNull Project project) {
         this.project = project;
         this.consoleView = createConsoleView(project);
@@ -48,7 +59,6 @@ public class CustomExecutor implements Disposable {
 
     private ConsoleView createConsoleView(Project project) {
         TextConsoleBuilder consoleBuilder = TextConsoleBuilderFactory.getInstance().createBuilder(project);
-//        consoleBuilder.filters(myFilterList);
         ConsoleView console = consoleBuilder.getConsole();
         return console;
     }
@@ -67,7 +77,6 @@ public class CustomExecutor implements Disposable {
         if (executor == null) {
             return;
         }
-        DefaultActionGroup actionGroup = new DefaultActionGroup();
 
         final RunnerLayoutUi.Factory factory = RunnerLayoutUi.Factory.getInstance(project);
         RunnerLayoutUi layoutUi = factory.create("runnerId", "runnerTitle", "sessionName", project);
@@ -105,10 +114,6 @@ public class CustomExecutor implements Disposable {
         Disposer.register(content, consoleView);
         if (stopAction != null) {
             Disposer.register(consoleView, () -> stopAction.run());
-        }
-
-        for (AnAction action : consoleView.createConsoleActions()) {
-            actionGroup.addAction(action);
         }
 
         ExecutionManager.getInstance(project).getContentManager().showRunContent(executor, descriptor);
